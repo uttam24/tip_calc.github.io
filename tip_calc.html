@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;1,100;1,300&display=swap" rel="stylesheet">
+
+	<style>
+		*{margin:0;padding: 0;box-sizing: border-box;font-family: 'Josefin Sans', sans-serif;}
+		main{height: 100vh;background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);display: flex;justify-content: center;align-items: center;flex-direction:column;}
+		div{max-width: 500px;height: auto;background:#00cec9;padding: 30px;box-shadow: 1px 1px 15px #2d3436}
+		h1{margin-bottom: 10px;text-shadow: 1px 2px 1px white;text-transform: capitalize;}
+		label{display: block;text-transform: capitalize;margin-top: 15px;}
+		input{width: 400px;padding:10px 0;}
+		button{border-radius: 10px;padding:15px 30px;font-size: 0.8rem;text-transform: uppercase;border:none;color:#000;background:#00b894;box-shadow: 1px 1px 5px 1px #2d3436;margin-top: 20px;font-weight:bold}
+	</style>
+</head>
+<body>
+<main>
+	<h1>Tip Calculator</h1>
+	<div>
+		<label>Bill Amount</label>
+		<input type="text" name="" id="bill_amount">
+		<br> 
+		<label>tip perc</label>
+		<input type="text" name="" id="tip_perc">
+		<br> 
+		<label>total Amount</label>
+		<input type="text" name="" id="tip_total" disabled="">
+		<br> 
+		<label>total billed</label>
+		<input type="text" name="" id="total_billed" disabled="">
+		<br>
+		<button onclick="tipcalcy()">Calculate</button> 
+	</div>
+</main>
+</body>
+<script type="text/javascript">
+	const tipcalcy =()=>{
+		let amount = document.getElementById('bill_amount').value;
+		let perc = document.getElementById('tip_perc').value;
+
+		let tip = amount *(perc/100);
+
+		let total = tip + Number(amount);
+		document.getElementById('tip_total').value = tip;
+		document.getElementById('total_billed').value = total;
+	}
+</script>
+</html>
